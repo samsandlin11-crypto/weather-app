@@ -1,6 +1,6 @@
 import sys
 import requests
-from PyQt5.QtWidgets import (QApplication, QListWidget, QStackedWidget, QWidget, QLabel, QLineEdit,
+from PyQt5.QtWidgets import (QApplication, QWidget, QLabel, QLineEdit,
                              QPushButton, QVBoxLayout)
 from PyQt5.QtCore import Qt
 
@@ -13,14 +13,7 @@ class WeatherApp(QWidget):
         self.temp_label = QLabel( self)
         self.emoji_label = QLabel( self)
         self.description_label = QLabel( self)
-        self.stack = QStackedWidget(self)
-        self.mainmenu = QWidget()
-        self.currentmenu = QWidget()
-        self.fivedaymenu = QWidget()
-        self.leftlist = QListWidget ()
-        self.leftlist.insertItem (0, 'Contact' )
-        self.leftlist.insertItem (1, 'Personal' )
-        self.leftlist.insertItem (2, 'Educational' )
+     
         
         self.initUI()
     def initUI(self):
@@ -33,9 +26,6 @@ class WeatherApp(QWidget):
         vbox.addWidget(self.temp_label)
         vbox.addWidget(self.emoji_label)
         vbox.addWidget(self.description_label)
-        self.stack.addWidget(self.mainmenu)
-        self.stack.addWidget(self.currentmenu)
-        self.stack.addWidget(self.fivedaymenu)
 
         self.setLayout(vbox)
 
